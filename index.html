@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p.subtitle {
+      color: #666;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      border: 2px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+      border-color: #4f8ef7;
+    }
+
+    .card.popular {
+      background: #1a1a2e;
+      color: #ffffff;
+      transform: translateY(-8px);
+      border-color: #4f8ef7;
+      box-shadow: 0 16px 40px rgba(79,142,247,0.3);
+    }
+
+    .card.popular:hover {
+      transform: translateY(-18px);
+      box-shadow: 0 24px 50px rgba(79,142,247,0.4);
+    }
+
+    .badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4f8ef7;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .plan {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4f8ef7;
+      margin-bottom: 16px;
+    }
+
+    .card.popular .plan {
+      color: #7eb3ff;
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .card.popular .price {
+      color: #ffffff;
+    }
+
+    .price span {
+      font-size: 20px;
+      font-weight: 400;
+      vertical-align: super;
+    }
+
+    .period {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 30px;
+    }
+
+    .card.popular .period {
+      color: #aaa;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .features li {
+      font-size: 14px;
+      color: #555;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card.popular .features li {
+      color: #ccc;
+      border-bottom-color: #2a2a4e;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: #4f8ef7;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #4f8ef7;
+      background: transparent;
+      color: #4f8ef7;
+    }
+
+    .btn:hover {
+      background: #4f8ef7;
+      color: white;
+    }
+
+    .card.popular .btn {
+      background: #4f8ef7;
+      color: white;
+      border-color: #4f8ef7;
+    }
+
+    .card.popular .btn:hover {
+      background: #3a7de0;
+      border-color: #3a7de0;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+        max-width: 320px;
+      }
+      .card.popular {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Pricing</h1>
+  <p class="subtitle">Choose the plan that works best for you</p>
+
+  <div class="cards">
+
+    <!-- Starter -->
+    <div class="card">
+      <div class="plan">Starter</div>
+      <div class="price"><span>$</span>25</div>
+      <div class="period">per project</div>
+      <ul class="features">
+        <li>1 Page Website</li>
+        <li>Responsive Design</li>
+        <li>HTML & CSS Only</li>
+        <li>2 Revisions</li>
+        <li>3 Day Delivery</li>
+      </ul>
+      <button class="btn">Get Started</button>
+    </div>
+
+    <!-- Popular -->
+    <div class="card popular">
+      <div class="badge">Most Popular</div>
+      <div class="plan">Business</div>
+      <div class="price"><span>$</span>50</div>
+      <div class="period">per project</div>
+      <ul class="features">
+        <li>Up to 3 Pages</li>
+        <li>Responsive Design</li>
+        <li>Contact Form</li>
+        <li>3 Revisions</li>
+        <li>5 Day Delivery</li>
+      </ul>
+      <button class="btn">Get Started</button>
+    </div>
+
+    <!-- Pro -->
+    <div class="card">
+      <div class="plan">Pro</div>
+      <div class="price"><span>$</span>80</div>
+      <div class="period">per project</div>
+      <ul class="features">
+        <li>Up to 5 Pages</li>
+        <li>Responsive Design</li>
+        <li>Animations & Effects</li>
+        <li>Unlimited Revisions</li>
+        <li>7 Day Delivery</li>
+      </ul>
+      <button class="btn">Get Started</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
